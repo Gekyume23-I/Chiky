@@ -7,19 +7,17 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #e9f5f9;
+      background-color: #fffbe6; /* amarillo pastel */
       margin: 0;
-      padding: 20px;
-    }
-
-    .layout {
+      padding: 0;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       gap: 20px;
+      padding-top: 30px;
     }
 
-    .side-column {
+    .side-images {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -29,7 +27,6 @@
     .side-image {
       width: 100px;
       height: auto;
-      border-radius: 10px;
       object-fit: contain;
     }
 
@@ -42,12 +39,12 @@
     }
 
     h1 {
-      color: #007b9e;
+      color: #d4a900;
       margin-bottom: 10px;
     }
 
     p {
-      color: #555;
+      color: #444;
       font-size: 14px;
       margin-bottom: 20px;
     }
@@ -69,7 +66,7 @@
     }
 
     button {
-      background-color: #007b9e;
+      background-color: #d4a900;
       color: white;
       border: none;
       padding: 12px 20px;
@@ -81,101 +78,106 @@
     }
 
     button:hover {
-      background-color: #005f7f;
+      background-color: #b39200;
     }
 
     @media (max-width: 768px) {
-      .layout {
+      body {
         flex-direction: column;
         align-items: center;
       }
-      .side-column {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .side-image {
-        width: 80px;
+      .side-images {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="layout">
-
-    <!-- Columna izquierda de imágenes -->
-    <div class="side-column">
-      <img class="side-image" src="fotos/cruz.jpeg" alt="Imagen 1">
-      <img class="side-image" src="fotos/cruz.jpeg" alt="Imagen 2">
-      <img class="side-image" src="fotos/cruz.jpeg" alt="Imagen 3">
-    </div>
-
-    <!-- Formulario principal -->
-    <div class="container">
-      <h1>Formulario Misterioso</h1>
-      <p>Responde con sinceridad. Nada será usado en tu contra... probablemente.</p>
-
-      <form name="contact" netlify>
-        <input type="hidden" name="form-name" value="formulario-simpatico" />
-
-        <label>¿Perros o gatos?</label>
-        <select name="mascota_preferida" id="mascota_preferida" onchange="revisarGatos(this)">
-          <option value="Perros">Perros</option>
-          <option value="Gatos" id="gatoOpcion">Gatos</option>
-        </select>
-
-        <label>¿Quién es tu Rey Católico favorito?</label>
-        <select name="rey_catolico">
-          <option value="Isabel">Isabel</option>
-          <option value="Fernando">Fernando</option>
-          <option value="Los dos porque el branding fue conjunto">Los dos porque el branding fue conjunto</option>
-        </select>
-
-        <label>¿Arriba o abajo (en litera)?</label>
-        <select name="litera">
-          <option value="Arriba">Arriba</option>
-          <option value="Abajo">Abajo</option>
-          <option value="En el suelo por si acaso">En el suelo por si acaso</option>
-        </select>
-
-        <label>¿Has visto el gol de Iniesta?</label>
-        <select name="iniesta_gol">
-          <option value="Claro que sí">Claro que sí</option>
-          <option value="No, pero me han hablado">No, pero me han hablado</option>
-          <option value="¿Quién es Iniesta?">¿Quién es Iniesta?</option>
-        </select>
-
-        <label>¿Cuáles son los meses del año con 28 días?</label>
-        <input type="text" name="meses_28_dias" placeholder="..." />
-
-        <label>¿Qué sería necesario para que 5 personas no se mojasen con un solo paraguas?</label>
-        <input type="text" name="paraguas_5_personas" placeholder="..." />
-
-        <label>¿Me dejas tu número? (tranqui, es anónimo... casi)</label>
-        <input type="tel" name="numero_telefono" placeholder="+34..." />
-
-        <button type="submit">Enviar 🚀</button>
-      </form>
-    </div>
-
-    <!-- Columna derecha de imágenes -->
-    <div class="side-column">
-      <img class="side-image" src="fotos/img2.png" alt="Imagen 4">
-      <img class="side-image" src="fotos/img2.png" alt="Imagen 5">
-      <img class="side-image" src="fotos/img2.png" alt="Imagen 6">
-    </div>
-
+  <!-- Imágenes del lado izquierdo -->
+  <div class="side-images">
+    <img class="side-image" src="fotos/cruz.jpeg" alt="Decoración" />
+    <img class="side-image" src="fotos/cruz.jpeg" alt="Decoración" />
+    <img class="side-image" src="fotos/cruz.jpeg" alt="Decoración" />
+    <img class="side-image" src="fotos/cruz.jpeg" alt="Decoración" />
   </div>
 
+  <!-- Formulario -->
+  <div class="container">
+    <h1>Formulario Misterioso</h1>
+    <p>Responde con sinceridad. Nada será usado en tu contra... probablemente.</p>
+
+    <form name="formulario-simpatico" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="formulario-simpatico" />
+
+      <label>¿Perros o gatos?</label>
+      <select name="mascota_preferida" id="mascota_preferida" onchange="revisarGatos(this)">
+        <option value="Perros">Perros</option>
+        <option value="Gatos" id="gatoOpcion">Gatos</option>
+      </select>
+
+      <label>¿Quién es tu Rey Católico favorito?</label>
+      <select name="rey_catolico">
+        <option value="Isabel">Isabel</option>
+        <option value="Fernando">Fernando</option>
+        <option value="Los dos porque el branding fue conjunto">Los dos porque el branding fue conjunto</option>
+      </select>
+
+      <label>¿Arriba o abajo (en litera)?</label>
+      <select name="litera">
+        <option value="Arriba">Arriba</option>
+        <option value="Abajo">Abajo</option>
+        <option value="En el suelo por si acaso">En el suelo por si acaso</option>
+      </select>
+
+      <label>¿Has visto el gol de Iniesta?</label>
+      <select name="iniesta_gol">
+        <option value="Claro que sí">Claro que sí</option>
+        <option value="No, pero me han hablado">No, pero me han hablado</option>
+        <option value="¿Quién es Iniesta?">¿Quién es Iniesta?</option>
+      </select>
+
+      <label>¿Cuáles son los meses del año con 28 días?</label>
+      <input type="text" name="meses_28_dias" placeholder="..." />
+
+      <label>¿Qué sería necesario para que 5 personas no se mojasen con un solo paraguas?</label>
+      <input type="text" name="paraguas_5_personas" placeholder="..." />
+
+      <label>¿Me dejas tu número? (tranqui, es anónimo... casi)</label>
+      <input type="tel" name="numero_telefono" placeholder="+34..." />
+
+      <button type="submit">Enviar 🚀</button>
+    </form>
+  </div>
+
+  <!-- Imágenes del lado derecho -->
+  <div class="side-images">
+    <img class="side-image" src="fotos/img2.png" alt="Decoración" />
+    <img class="side-image" src="fotos/img2.png" alt="Decoración" />
+    <img class="side-image" src="fotos/img2.png" alt="Decoración" />
+    <img class="side-image" src="fotos/img2.png" alt="Decoración" />
+  </div>
+
+  <!-- Script para evitar la opción "Gatos" -->
   <script>
     function revisarGatos(select) {
       if (select.value === "Gatos") {
-        alert("La opción 'Gatos' no está disponible. Inténtalo con 'Perros'.");
+        alert("Lo siento, esta opción ha sido deshabilitada por razones caninas.");
         select.value = "Perros";
       }
     }
   </script>
+
+  <!-- Formulario oculto para que Netlify lo detecte -->
+  <form name="formulario-simpatico" netlify hidden>
+    <input type="text" name="mascota_preferida" />
+    <input type="text" name="rey_catolico" />
+    <input type="text" name="litera" />
+    <input type="text" name="iniesta_gol" />
+    <input type="text" name="meses_28_dias" />
+    <input type="text" name="paraguas_5_personas" />
+    <input type="tel" name="numero_telefono" />
+  </form>
 
 </body>
 </html>
