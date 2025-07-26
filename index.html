@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario Misterioso</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e9f5f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .layout {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .side-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .side-image {
+      width: 100px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    .container {
+      max-width: 500px;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #007b9e;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 5px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #007b9e;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #005f7f;
+    }
+
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+        align-items: center;
+      }
+      .side-column {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .side-image {
+        width: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- Columna izquierda de imágenes -->
+    <div class="side-column">
+      <img class="side-image" src="fotos/cruz.jpeg" alt="Imagen 1">
+      <img class="side-image" src="fotos/cruz.jpeg" alt="Imagen 2">
+      <img class="side-image" src="fotos/cruz.jpeg" alt="Imagen 3">
+    </div>
+
+    <!-- Formulario principal -->
+    <div class="container">
+      <h1>Formulario Misterioso</h1>
+      <p>Responde con sinceridad. Nada será usado en tu contra... probablemente.</p>
+
+      <form name="formulario-simpatico" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="formulario-simpatico" />
+
+        <label>¿Perros o gatos?</label>
+        <select name="mascota_preferida" id="mascota_preferida" onchange="revisarGatos(this)">
+          <option value="Perros">Perros</option>
+          <option value="Gatos" id="gatoOpcion">Gatos</option>
+        </select>
+
+        <label>¿Quién es tu Rey Católico favorito?</label>
+        <select name="rey_catolico">
+          <option value="Isabel">Isabel</option>
+          <option value="Fernando">Fernando</option>
+          <option value="Los dos porque el branding fue conjunto">Los dos porque el branding fue conjunto</option>
+        </select>
+
+        <label>¿Arriba o abajo (en litera)?</label>
+        <select name="litera">
+          <option value="Arriba">Arriba</option>
+          <option value="Abajo">Abajo</option>
+          <option value="En el suelo por si acaso">En el suelo por si acaso</option>
+        </select>
+
+        <label>¿Has visto el gol de Iniesta?</label>
+        <select name="iniesta_gol">
+          <option value="Claro que sí">Claro que sí</option>
+          <option value="No, pero me han hablado">No, pero me han hablado</option>
+          <option value="¿Quién es Iniesta?">¿Quién es Iniesta?</option>
+        </select>
+
+        <label>¿Cuáles son los meses del año con 28 días?</label>
+        <input type="text" name="meses_28_dias" placeholder="..." />
+
+        <label>¿Qué sería necesario para que 5 personas no se mojasen con un solo paraguas?</label>
+        <input type="text" name="paraguas_5_personas" placeholder="..." />
+
+        <label>¿Me dejas tu número? (tranqui, es anónimo... casi)</label>
+        <input type="tel" name="numero_telefono" placeholder="+34..." />
+
+        <button type="submit">Enviar 🚀</button>
+      </form>
+    </div>
+
+    <!-- Columna derecha de imágenes -->
+    <div class="side-column">
+      <img class="side-image" src="fotos/img2.png" alt="Imagen 4">
+      <img class="side-image" src="fotos/img2.png" alt="Imagen 5">
+      <img class="side-image" src="fotos/img2.png" alt="Imagen 6">
+    </div>
+
+  </div>
+
+  <script>
+    function revisarGatos(select) {
+      if (select.value === "Gatos") {
+        alert("La opción 'Gatos' no está disponible. Inténtalo con 'Perros'.");
+        select.value = "Perros";
+      }
+    }
+  </script>
+
+</body>
+</html>
