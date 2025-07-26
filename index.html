@@ -25,9 +25,10 @@
     }
 
     .side-image {
-      width: 100px;
+      width: 200px;
       height: auto;
       object-fit: contain;
+      margin-top: 30px;
     }
 
     .container {
@@ -97,9 +98,9 @@
   <!-- Imágenes del lado izquierdo -->
   <div class="side-images">
     <img class="side-image" src="fotos/cruz.jpeg" alt="Decoración" />
-    <img class="side-image" src="fotos/cruz.jpeg" alt="Decoración" />
-    <img class="side-image" src="fotos/cruz.jpeg" alt="Decoración" />
-    <img class="side-image" src="fotos/cruz.jpeg" alt="Decoración" />
+    <img class="side-image" src="fotos/estopa.jpg" alt="Decoración" />
+    <img class="side-image" src="fotos/imagine.jpeg" alt="Decoración" />
+    <img class="side-image" src="fotos/magan.jpg" alt="Decoración" />
   </div>
 
   <!-- Formulario -->
@@ -123,7 +124,7 @@
         <option value="Los dos porque el branding fue conjunto">Los dos porque el branding fue conjunto</option>
       </select>
 
-      <label>¿Arriba o abajo (en litera)?</label>
+      <label>¿Arriba o abajo (Para dormir en una litera)?</label>
       <select name="litera">
         <option value="Arriba">Arriba</option>
         <option value="Abajo">Abajo</option>
@@ -138,13 +139,14 @@
       </select>
 
       <label>¿Cuáles son los meses del año con 28 días?</label>
-      <input type="text" name="meses_28_dias" placeholder="..." />
+      <input type="text" name="meses_28_dias" placeholder="¡Qué se noten las 3 neuronas que tienes!" />
 
       <label>¿Qué sería necesario para que 5 personas no se mojasen con un solo paraguas?</label>
-      <input type="text" name="paraguas_5_personas" placeholder="..." />
+      <input type="text" name="paraguas_5_personas" placeholder="Spiderman es mejor que Batman" />
 
       <label>¿Me dejas tu número? (tranqui, es anónimo... casi)</label>
-      <input type="tel" name="numero_telefono" placeholder="+34..." />
+      <input type="tel" name="numero_telefono" placeholder="Ej: 612345678" pattern="[0-9]+" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
+
 
       <button type="submit">Enviar 🚀</button>
     </form>
@@ -152,10 +154,10 @@
 
   <!-- Imágenes del lado derecho -->
   <div class="side-images">
-    <img class="side-image" src="fotos/img2.png" alt="Decoración" />
-    <img class="side-image" src="fotos/img2.png" alt="Decoración" />
-    <img class="side-image" src="fotos/img2.png" alt="Decoración" />
-    <img class="side-image" src="fotos/img2.png" alt="Decoración" />
+    <img class="side-image" src="fotos/bogota.jpeg" alt="Decoración" />
+    <img class="side-image" src="fotos/della.jpeg" alt="Decoración" />
+    <img class="side-image" src="fotos/natosywaor.jpg" alt="Decoración" />
+    <img class="side-image" src="fotos/wos.jpeg" alt="Decoración" />
   </div>
 
   <!-- Script para evitar la opción "Gatos" -->
